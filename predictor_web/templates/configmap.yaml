@@ -1,0 +1,5 @@
+apiVersion: v2
+kind: ConfigMap
+metadata:
+   name: {{ .Release.Name }}-configmap
+
