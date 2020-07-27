@@ -77,3 +77,9 @@ nodeSelector: {}
 tolerations: []
 
 affinity: {}
+
+volumes:
+   name: nfs-volume
+   server: 192.168.1.44
+   path: /
+   mountPath: /var/db
