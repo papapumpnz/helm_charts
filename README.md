@@ -12,3 +12,13 @@ helm repo add local localhost:5000
 ```
 helm chart push localhost:5000/local/mychart:2.7.0
 ```
+
+## Install chart
+```
+helm install dfsfdfsfdfsdf TODO:
+```
+
+## Uninstall chart
+```
+helm sdfdfdfsd TODO:
+```
