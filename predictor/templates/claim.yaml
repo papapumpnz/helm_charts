@@ -1,7 +1,9 @@
 apiVersion: v2
 kind: PersistentVolumeClaim
 metadata:
-  name: "{{ .Values.volumes.name }}" 
+  name: "{{ .Values.volumes.claimName }}"
+  annotations:
+    volume.beta.kubernetes.io/storage-class: "managed-nfs-storage"
 spec:
   accessModes:
     - ReadWriteMany

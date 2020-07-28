@@ -79,7 +79,6 @@ tolerations: []
 affinity: {}
 
 volumes:
-   name: nfs-volume
-   server: 192.168.1.44
-   path: /path/on/nfs/server
+   name: predictor-pv
+   claimName: predictor-pv-claim
    mountPath: /var/db

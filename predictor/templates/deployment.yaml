@@ -29,8 +29,8 @@ spec:
         {{- toYaml .Values.podSecurityContext | nindent 8 }}
       volumes:
         - name: "{{ .Values.volumes.name }}"
-          hostPath:
-            path: /
+          persistentVolumeClaim:
+            claimName: "{{ .Values.volumes.claimName }}"
       containers:
         - name: {{ .Chart.Name }}
           securityContext:
