@@ -5,7 +5,7 @@
 replicaCount: 1
 
 image:
-  repository: pihost2.local:5000/predictor_web 
+  repository: pihost2.local:5000/predictor_web:latest 
   pullPolicy: Always 
   # Overrides the image tag whose default is the chart appVersion.
   tag: ""

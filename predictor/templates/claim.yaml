@@ -1,0 +1,10 @@
+apiVersion: v2
+kind: PersistentVolumeClaim
+metadata:
+  name: "{{ .Values.volumes.name }}" 
+spec:
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 1Gi

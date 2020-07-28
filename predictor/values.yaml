@@ -81,5 +81,5 @@ affinity: {}
 volumes:
    name: nfs-volume
    server: 192.168.1.44
-   path: /
+   path: /path/on/nfs/server
    mountPath: /var/db
