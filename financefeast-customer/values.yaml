@@ -44,12 +44,12 @@ ingress:
   className: ""
   annotations: 
     kubernetes.io/ingress.class: "traefik"
-    traefik.frontend.rule.type: PathPrefixStrip:/customer
+    traefik.frontend.rule.type: PathPrefixStrip
   hosts:
     - host:
       paths:
         - path: /customer
-          pathType: ImplementationSpecific
+          pathType: Prefix
   tls: []
   #  - secretName: chart-example-tls
   #    hosts:
