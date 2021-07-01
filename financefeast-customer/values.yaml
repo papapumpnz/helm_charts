@@ -47,7 +47,7 @@ ingress:
   hosts:
     - host:
       paths:
-        - path: /
+        - path: /financefeast-customer
           pathType: ImplementationSpecific
   tls: []
   #  - secretName: chart-example-tls
