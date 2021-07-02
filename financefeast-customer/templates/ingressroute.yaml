@@ -14,17 +14,17 @@ spec:
             - match: Host(`{{ .host | quote }}`) && PathPrefix(`{{ .path }}`)
               kind: Rule
               services:
-                - name: {{ $svcPort }}
+                - name: {{ $fullName }}
                   port: {{ $svcPort }}
               middlewares:
-                - name: {{ $svcPort }}-stripprefix
+                - name: {{ $fullName }}-stripprefix
         {{- end }}
     {{- end }}
 ---
 apiVersion: traefik.containo.us/v1alpha1
 kind: Middleware
 metadata:
-  name: {{ $svcPort }}-stripprefix
+  name: {{ $fullName }}-stripprefix
 spec:
   stripPrefix:
     prefixes:
