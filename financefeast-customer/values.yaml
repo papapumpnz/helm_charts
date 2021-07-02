@@ -7,7 +7,7 @@ replicaCount: 1
 image:
   repository: financefeast/customer
   tag: latest
-  pullPolicy: IfNotPresent
+  pullPolicy: Always
 
 imagePullSecrets: [{name: regcred}]
 nameOverride: ""
