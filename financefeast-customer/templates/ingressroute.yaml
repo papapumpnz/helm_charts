@@ -1,4 +1,6 @@
----
+{{- if .Values.ingress.enabled -}}
+{{- $fullName := include "financefeast-customer.fullname" . -}}
+{{- $svcPort := .Values.service.port -}}
 apiVersion: traefik.containo.us/v1alpha1
 kind: IngressRoute
 metadata:
@@ -31,3 +33,4 @@ spec:
                 - {{ .path }}
               {{- end }}
         {{- end }}
+{{- end }}
