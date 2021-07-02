@@ -1,0 +1,33 @@
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: {{ $fullName }}
+spec:
+  entryPoints:
+    - {{ $fullName }}
+  routes:
+    {{- range .Values.ingress.hosts }}
+        {{- range .paths }}
+            - match: Host(`{{ .host | quote }}`) && PathPrefix(`{{ .path }}`)
+              kind: Rule
+              services:
+                - name: {{ $svcPort }}
+                  port: {{ $svcPort }}
+              middlewares:
+                - name: {{ $svcPort }}-stripprefix
+        {{- end }}
+    {{- end }}
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: Middleware
+metadata:
+  name: {{ $svcPort }}-stripprefix
+spec:
+  stripPrefix:
+    prefixes:
+        {{- range .Values.ingress.hosts }}
+              {{- range .paths }}
+                - {{ .path }}
+              {{- end }}
+        {{- end }}
