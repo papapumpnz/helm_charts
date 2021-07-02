@@ -41,10 +41,10 @@ service:
 
 ingress:
   enabled: true
+  stripPrefix: true
   className: ""
   annotations: 
     kubernetes.io/ingress.class: traefik
-    traefik.frontend.rule.type: PathPrefixStrip
   hosts:
     - host: 
       paths:
