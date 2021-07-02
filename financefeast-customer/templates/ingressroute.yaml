@@ -1,4 +1,4 @@
-{{- if .Values.ingress.enabled & .Values.ingress.stripPrefix -}}
+{{- if and .Values.ingress.enabled .Values.ingress.stripPrefix -}}
 {{- $fullName := include "financefeast-customer.fullname" . -}}
 {{- $svcPort := .Values.service.port -}}
 apiVersion: traefik.containo.us/v1alpha1
