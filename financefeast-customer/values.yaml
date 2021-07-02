@@ -45,9 +45,9 @@ ingress:
   annotations: 
     kubernetes.io/ingress.class: traefik
   hosts:
-    - host: customer/*.
+    - host: 
       paths:
-        - path: /
+        - path: /customer
           pathType: ImplementationSpecific
   tls: []
   #  - secretName: chart-example-tls
