@@ -46,7 +46,7 @@ ingress:
   annotations: 
     kubernetes.io/ingress.class: traefik
   hosts:
-    - host: 
+    - host: customer.financefeast.io
       paths:
         - path: /
           pathType: ImplementationSpecific
