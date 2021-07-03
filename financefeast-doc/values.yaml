@@ -1,11 +1,11 @@
-# Default values for financefeast-identity.
+# Default values for financefeast-doc.
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
 replicaCount: 1
 
 image:
-  repository: financefeast/identity
+  repository: financefeast/doc
   tag: latest
   pullPolicy: Always
 
@@ -46,7 +46,7 @@ ingress:
     kubernetes.io/ingress.class: traefik
     ingress.kubernetes.io/whitelist-x-forwarded-for: "true"
   hosts:
-    - host: identity.financefeast.io
+    - host: doc.financefeast.io
       paths:
         - path: /
           pathType: ImplementationSpecific
@@ -79,7 +79,3 @@ nodeSelector: {}
 tolerations: []
 
 affinity: {}
-
-env:          
- - name: "ENVIRONMENT"
-   value: "PRODHOME"
