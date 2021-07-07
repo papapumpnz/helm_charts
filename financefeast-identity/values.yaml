@@ -84,4 +84,4 @@ env:
  - name: "ENVIRONMENT"
    value: "PRODHOME"
  - name: "AUTHLIB_INSECURE_TRANSPORT"
-   value: 1
+   value: "1"
