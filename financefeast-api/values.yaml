@@ -82,4 +82,4 @@ affinity: {}
 
 env:          
  - name: "ENVIRONMENT"
-   value: "PRODHOME"
+   value: "PROD"
