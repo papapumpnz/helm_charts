@@ -82,3 +82,5 @@ affinity: {}
 env:          
  - name: "CONFIG"
    value: "config/docker-home.ini"
+ - name: "AWS_DEFAULT_REGION"
+   value: "ap-southeast-2"
