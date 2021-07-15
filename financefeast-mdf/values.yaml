@@ -84,3 +84,5 @@ env:
    value: "config/docker-home.ini"
  - name: "AWS_DEFAULT_REGION"
    value: "ap-southeast-2"
+ - name: "FORCE_START"
+   value: true
