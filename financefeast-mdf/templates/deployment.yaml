@@ -42,8 +42,6 @@ spec:
             {{- range .Values.env }}
           - name: {{ .name }}
             value: {{ .value }}
-          - name: "FORCE_START"
-            value: "true"
          {{- end }}            
       {{- with .Values.nodeSelector }}
       nodeSelector:
