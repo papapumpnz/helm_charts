@@ -79,6 +79,4 @@ tolerations: []
 
 affinity: {}
 
-env:          
- - name: "CONFIG"
-   value: "config/docker-home.ini"
+env: {}
