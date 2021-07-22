@@ -42,7 +42,7 @@ spec:
           {{- end }}  
           volumeMounts:
             - name: data-gatherer
-              mountPath: /source
+              mountPath: /source/models
       volumes:
         - name: data-gatherer
           nfs:  
