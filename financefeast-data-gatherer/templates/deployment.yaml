@@ -43,13 +43,13 @@ spec:
           - name: {{ .name }}
             value: {{ .value }}
           volumeMounts:
-          - name: data-gatherer
-            mountPath: /source
+            - name: data-gatherer
+              mountPath: /source
       volumes:
-      - name: data-gatherer
-        nfs:  
-          server: nas
-          path: /nfs-share/data_gatherer            
+        - name: data-gatherer
+          nfs:  
+            server: nas
+            path: /nfs-share/data_gatherer            
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
