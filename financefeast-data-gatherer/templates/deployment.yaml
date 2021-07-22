@@ -46,8 +46,8 @@ spec:
       volumes:
         - name: data-gatherer
           nfs:  
-            server: nas
-            path: /nfs-share/data_gatherer            
+            server: nas.home
+            path: /nfs_share/data_gatherer            
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
