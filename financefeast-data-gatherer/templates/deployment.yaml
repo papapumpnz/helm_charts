@@ -8,11 +8,6 @@ spec:
   {{- if not .Values.autoscaling.enabled }}
   replicas: {{ .Values.replicaCount }}
   {{- end }}
-  volumes:
-    - name: data-gatherer
-      nfs:  
-        server: nas
-        path: /nfs-share/data_gatherer   
   selector:
     matchLabels:
       {{- include "financefeast-data-gatherer.selectorLabels" . | nindent 6 }}
@@ -49,7 +44,12 @@ spec:
             value: {{ .value }}
           volumeMounts:
             - name: data-gatherer
-              mountPath: /source           
+              mountPath: /source
+      volumes:
+        - name: data-gatherer
+          nfs:  
+            server: nas
+            path: /nfs-share/data_gatherer            
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
