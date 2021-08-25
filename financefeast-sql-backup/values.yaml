@@ -5,7 +5,7 @@
 replicaCount: 1
 
 image:
-  repository: financefeast/sql-backup
+  repository: financefeast/sql_backup
   tag: latest
   pullPolicy: Always
 
