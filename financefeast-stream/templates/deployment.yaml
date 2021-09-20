@@ -41,10 +41,13 @@ spec:
             httpGet:
               path: /health/alive
               port: http
+            periodSeconds: 30
+            initialDelaySeconds: 10              
           readinessProbe:
             httpGet:
               path: /health/alive
               port: http
+            periodSeconds: 30             
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
           env:          

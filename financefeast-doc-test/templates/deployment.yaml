@@ -41,13 +41,13 @@ spec:
             httpGet:
               path: /
               port: http
-              periodSeconds: 30
-              initialDelaySeconds: 10
+            periodSeconds: 30
+            initialDelaySeconds: 10
           readinessProbe:
             httpGet:
               path: /
               port: http
-              periodSeconds: 60
+            periodSeconds: 30
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
           env:          
