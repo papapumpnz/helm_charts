@@ -83,3 +83,5 @@ affinity: {}
 env:          
  - name: "ENVIRONMENT"
    value: "TEST"
+ - name: "MQ_PRICE_QUEUE_NAME"
+   value: "price1"
