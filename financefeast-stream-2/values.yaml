@@ -1,11 +1,11 @@
-# Default values for financefeast-stream-test-1.
+# Default values for financefeast-stream-2.
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
 replicaCount: 1
 
 image:
-  repository: financefeast/test-stream
+  repository: financefeast/stream
   tag: latest
   pullPolicy: Always
 
@@ -46,7 +46,7 @@ ingress:
   annotations: 
     kubernetes.io/ingress.class: traefik
   hosts:
-    - host: stream.test.financefeast.io
+    - host: stream.financefeast.io
       paths:
         - path: /
           pathType: ImplementationSpecific
@@ -82,6 +82,6 @@ affinity: {}
 
 env:          
  - name: "ENVIRONMENT"
-   value: "TEST"
+   value: "PROD"
  - name: "MQ_PRICE_QUEUE_NAME"
-   value: "price1"
+   value: "price2"

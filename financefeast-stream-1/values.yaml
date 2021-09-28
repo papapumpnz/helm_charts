@@ -1,4 +1,4 @@
-# Default values for financefeast-stream.
+# Default values for financefeast-stream-1.
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
@@ -83,3 +83,5 @@ affinity: {}
 env:          
  - name: "ENVIRONMENT"
    value: "PROD"
+ - name: "MQ_PRICE_QUEUE_NAME"
+   value: "price1"

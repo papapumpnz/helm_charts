@@ -2,14 +2,14 @@
 apiVersion: autoscaling/v2beta1
 kind: HorizontalPodAutoscaler
 metadata:
-  name: {{ include "financefeast-stream-test-1.fullname" . }}
+  name: {{ include "financefeast-stream-2.fullname" . }}
   labels:
-    {{- include "financefeast-stream-test-1.labels" . | nindent 4 }}
+    {{- include "financefeast-stream-2.labels" . | nindent 4 }}
 spec:
   scaleTargetRef:
     apiVersion: apps/v1
     kind: Deployment
-    name: {{ include "financefeast-stream-test-1.fullname" . }}
+    name: {{ include "financefeast-stream-2.fullname" . }}
   minReplicas: {{ .Values.autoscaling.minReplicas }}
   maxReplicas: {{ .Values.autoscaling.maxReplicas }}
   metrics:

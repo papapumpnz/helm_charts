@@ -1,9 +1,9 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ include "financefeast-stream-test-1.fullname" . }}
+  name: {{ include "financefeast-stream-1.fullname" . }}
   labels:
-    {{- include "financefeast-stream-test-1.labels" . | nindent 4 }}
+    {{- include "financefeast-stream-1.labels" . | nindent 4 }}
 spec:
   type: {{ .Values.service.type }}
   ports:
@@ -12,4 +12,4 @@ spec:
       protocol: TCP
       name: http
   selector:
-    {{- include "financefeast-stream-test-1.selectorLabels" . | nindent 4 }}
+    {{- include "financefeast-stream-1.selectorLabels" . | nindent 4 }}
