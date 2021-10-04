@@ -53,7 +53,7 @@ ingress:
       paths:
         - path: /
           pathType: ImplementationSpecific         
-              - host: financefeast.co.nz
+    - host: financefeast.co.nz
       paths:
         - path: /
           pathType: ImplementationSpecific
