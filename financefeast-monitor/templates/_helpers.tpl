@@ -1,7 +1,7 @@
 {{/*
 Expand the name of the chart.
 */}}
-{{- define "financefeast-data-gatherer.name" -}}
+{{- define "financefeast-monitor.name" -}}
 {{- default .Chart.Name .Values.nameOverride | trunc 63 | trimSuffix "-" }}
 {{- end }}
 
@@ -10,7 +10,7 @@ Create a default fully qualified app name.
 We truncate at 63 chars because some Kubernetes name fields are limited to this (by the DNS naming spec).
 If release name contains chart name it will be used as a full name.
 */}}
-{{- define "financefeast-data-gatherer.fullname" -}}
+{{- define "financefeast-monitor.fullname" -}}
 {{- if .Values.fullnameOverride }}
 {{- .Values.fullnameOverride | trunc 63 | trimSuffix "-" }}
 {{- else }}
@@ -26,16 +26,16 @@ If release name contains chart name it will be used as a full name.
 {{/*
 Create chart name and version as used by the chart label.
 */}}
-{{- define "financefeast-data-gatherer.chart" -}}
+{{- define "financefeast-monitor.chart" -}}
 {{- printf "%s-%s" .Chart.Name .Chart.Version | replace "+" "_" | trunc 63 | trimSuffix "-" }}
 {{- end }}
 
 {{/*
 Common labels
 */}}
-{{- define "financefeast-data-gatherer.labels" -}}
-helm.sh/chart: {{ include "financefeast-data-gatherer.chart" . }}
-{{ include "financefeast-data-gatherer.selectorLabels" . }}
+{{- define "financefeast-monitor.labels" -}}
+helm.sh/chart: {{ include "financefeast-monitor.chart" . }}
+{{ include "financefeast-monitor.selectorLabels" . }}
 {{- if .Chart.AppVersion }}
 app.kubernetes.io/version: {{ .Chart.AppVersion | quote }}
 {{- end }}
@@ -45,17 +45,17 @@ app.kubernetes.io/managed-by: {{ .Release.Service }}
 {{/*
 Selector labels
 */}}
-{{- define "financefeast-data-gatherer.selectorLabels" -}}
-app.kubernetes.io/name: {{ include "financefeast-data-gatherer.name" . }}
+{{- define "financefeast-monitor.selectorLabels" -}}
+app.kubernetes.io/name: {{ include "financefeast-monitor.name" . }}
 app.kubernetes.io/instance: {{ .Release.Name }}
 {{- end }}
 
 {{/*
 Create the name of the service account to use
 */}}
-{{- define "financefeast-data-gatherer.serviceAccountName" -}}
+{{- define "financefeast-monitor.serviceAccountName" -}}
 {{- if .Values.serviceAccount.create }}
-{{- default (include "financefeast-data-gatherer.fullname" .) .Values.serviceAccount.name }}
+{{- default (include "financefeast-monitor.fullname" .) .Values.serviceAccount.name }}
 {{- else }}
 {{- default "default" .Values.serviceAccount.name }}
 {{- end }}
