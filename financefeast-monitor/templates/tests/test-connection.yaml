@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: "{{ include "financefeast-data-gatherer.fullname" . }}-test-connection"
+  labels:
+    {{- include "financefeast-data-gatherer.labels" . | nindent 4 }}
+  annotations:
+    "helm.sh/hook": test
+spec:
+  containers:
+    - name: wget
+      image: busybox
+      command: ['wget']
+      args: ['{{ include "financefeast-data-gatherer.fullname" . }}:{{ .Values.service.port }}']
+  restartPolicy: Never
