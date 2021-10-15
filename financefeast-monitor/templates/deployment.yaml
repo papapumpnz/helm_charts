@@ -40,20 +40,6 @@ spec:
           - name: {{ .name }}
             value: {{ .value }}
           {{- end }}  
-          volumeMounts:
-            - name: data-gatherer
-              mountPath: /source/models
-            - name: input-data
-              mountPath: /source/input_data              
-      volumes:
-        - name: data-gatherer
-          nfs:  
-            server: nas.home
-            path: /nfs_share/monitor      
-        - name: input-data
-          nfs:  
-            server: nas.home
-            path: /nfs_share/monitor_input_data
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
